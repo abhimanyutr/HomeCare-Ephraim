@@ -322,16 +322,27 @@ menu li::after{
         background: transparent;
         padding: 0 0 0 15px;
         margin-top: 10px;
+        display: none; /* Hidden by default in mobile */
+    }
+    .dropdown:hover .dropdown-menu {
+        display: block;
     }
     .dropdown-menu::before {
         display: none;
     }
     .dropdown-menu li a {
-        color: #fff !important; /* Match mobile menu text color */
+        color: #333 !important; /* Fixed: changed from #fff to #333 to match white background */
         padding: 8px 0;
+        font-weight: 500 !important;
     }
     .dropdown:hover .dropdown-menu {
         transform: none;
+    }
+
+    .submenu li a {
+        color: #555 !important;
+        padding: 6px 0 !important;
+        font-weight: 400 !important;
     }
 }
 
@@ -403,38 +414,152 @@ menu li::after{
     .navRight{
         position: fixed;
         top: 0;
-        right: -280px;      /* Hidden outside screen */
-        width: 280px;
+        right: -320px;      /* Slightly wider for better spacing */
+        width: 320px;
         height: 100vh;
-        background: #1b0d0d;
-        transition: 0.4s ease;
-        z-index: 1000;
-        padding: 30px 20px;
-        box-shadow: -3px 0 15px rgba(0,0,0,0.15);
+        background: #fff;
+        transition: 0.5s cubic-bezier(0.65, 0, 0.35, 1); /* Smoother curve */
+        z-index: 10000;
+        padding: 25px;
+        box-shadow: -15px 0 40px rgba(0,0,0,0.1);
+        display: flex !important;
+        flex-direction: column;
+        justify-content: flex-start;
+        overflow-y: auto;
     }
 
     .navRight.active{
         right: 0;
     }
 
+    /* Staggered Content Animation */
+    .navRight .menu li,
+    .navRight .mobileContact,
+    .navRight .closeBtn {
+        opacity: 0;
+        transform: translateX(30px);
+        transition: 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+    }
+
+    .navRight.active .menu li,
+    .navRight.active .mobileContact,
+    .navRight.active .closeBtn {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    /* Animation delays for staggered effect */
+    .navRight.active .closeBtn { transition-delay: 0.1s; }
+    .navRight.active .menu li:nth-child(1) { transition-delay: 0.2s; }
+    .navRight.active .menu li:nth-child(2) { transition-delay: 0.25s; }
+    .navRight.active .menu li:nth-child(3) { transition-delay: 0.3s; }
+    .navRight.active .menu li:nth-child(4) { transition-delay: 0.35s; }
+    .navRight.active .menu li:nth-child(5) { transition-delay: 0.4s; }
+    .navRight.active .menu li:nth-child(6) { transition-delay: 0.45s; }
+    .navRight.active .mobileContact { transition-delay: 0.55s; }
+
+    .navRight .topInfo {
+        display: none;
+    }
+
     .closeBtn{
         display: flex;
         justify-content: flex-end;
-        font-size: 28px;
+        font-size: 26px;
         cursor: pointer;
-        margin-bottom: 30px;
+        margin-bottom: 25px;
+        color: #ef8f78; /* Theme color for close button */
+        transition: transform 0.3s ease;
+    }
+    .closeBtn:hover {
+        transform: rotate(90deg);
     }
 
     .menu{
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        gap: 25px;
+        gap: 12px;
+        width: 100%;
+        margin-bottom: 40px;
+    }
+
+    .menu li {
+        width: 100%;
+        border-bottom: 1px solid #f8f8f8;
+        padding-bottom: 12px;
     }
 
     .menu li a{
         font-size: 16px;
+        color: #333;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        transition: color 0.3s ease;
     }
+    
+    .menu li a:hover {
+        color: #ef8f78;
+        padding-left: 5px;
+    }
+
+    /* Perfect Phone & Contact Section */
+    .mobileContact {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        padding: 25px 20px;
+        margin-top: auto;
+        background: #fff9f8; /* Light theme tint background */
+        border-radius: 20px;
+        border: 1px solid #ffe6e0;
+        box-shadow: 0 5px 15px rgba(239, 143, 120, 0.05);
+    }
+
+    .mobileContact .phone {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        background: #fff;
+        padding: 10px 15px;
+        border-radius: 15px;
+        border: 1px solid #f0f0f0;
+    }
+
+    .mobileContact .phone img {
+        width: 38px;
+        height: 38px;
+    }
+
+    .mobileContact .phoneText small {
+        font-size: 11px;
+        color: #888;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 2px;
+    }
+
+    .mobileContact .phoneText span {
+        font-size: 17px;
+        font-weight: 800;
+        color: #1b0d0d;
+    }
+
+    .mobileContact .contactBtn {
+        text-align: center;
+        width: 100%;
+        padding: 14px;
+        font-size: 14px;
+        letter-spacing: 1px;
+        box-shadow: 0 4px 10px rgba(239, 143, 120, 0.3);
+    }
+}
+
+/* Initially hide mobile contact on desktop */
+.mobileContact {
+    display: none;
 }
 
 /* Hero Section */
@@ -636,18 +761,7 @@ menu li::after{
 
 /* Button */
 
-.homeCare .bookBtn{
-   display: inline-block;
-    padding: 14px 30px;
-    background: #E89A87;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 30px;
-    font-family: Arial, sans-serif;
-    font-size: 13px;
-    font-weight: 600;
-    transition: .3s;
-}
+
 
 .bookBtn:hover{
     background: #d97160;
@@ -1581,9 +1695,12 @@ font-family: "Gantari", sans-serif;
 
 /* Active Open State */
 .accordion-item.active {
+  border-color: #f2846b;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.accordion-item.active .accordion-trigger {
   background-color: #f2846b;
-  border-color: transparent;
-  box-shadow: 0 8px 25px rgba(242, 132, 107, 0.2);
 }
 
 .accordion-item.active .question-text {
@@ -1603,11 +1720,23 @@ font-family: "Gantari", sans-serif;
 .accordion-panel {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease;
+  background-color: #fff;
+  opacity: 0; /* Hidden by default */
+}
+
+.accordion-item.active .accordion-panel {
+  opacity: 1; /* Fade in when active */
 }
 
 .panel-content {
-  padding: 0 24px 20px 24px;
+  padding: 25px 24px;
+  transform: translateY(-15px); /* Slide from slightly above */
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.accordion-item.active .panel-content {
+  transform: translateY(0); /* Slide into place */
 }
 
 .panel-content p {
@@ -1618,20 +1747,22 @@ font-family: "Gantari", sans-serif;
   margin: 0;
 }
 
-.accordion-item.active .panel-content p {
-  color: #ffffff;
-}
+/* Removed: .accordion-item.active .panel-content p { color: #ffffff; } */
 
 /* --- Responsive Media Strategy --- */
 @media (max-width: 1200px) {
   .faq-layout {
-    gap: 50px;
+    gap: 40px; /* Balanced gap for laptop */
+    align-items: center;
   }
   .faq-graphic-side {
     flex: 0 0 45%;
-     margin: 150px auto 0px;
+    margin: 0; /* Removed the 150px offset to fix vertical alignment */
   }
-  
+  .faq-main-img {
+    width: 100%;
+    right: -5%; /* Subtle adjustment for better overlap balance */
+  }
 }
 
 
