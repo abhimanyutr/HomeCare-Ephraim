@@ -144,7 +144,8 @@ ul{
     font-size:15px;
     font-weight:600;
 }
-.menu li a:hover{
+.menu li a:hover,
+.menu li a.nav-active {
     color:#ef8f78;
     text-decoration: underline;
     text-underline-offset: 10px;
@@ -709,7 +710,7 @@ menu li::after{
 }
 
 .breadcrumb .active{
-    color: #e88372;
+    color: #ef8f78;
 }
 
 .breadcrumb span{
@@ -1200,7 +1201,7 @@ font-family: "Gantari", sans-serif;
     display:inline-flex;
     justify-content:center;
     align-items:center;
-
+    font-family: "Gantari", sans-serif;
     padding: 14px 30px;
 
     background:#eb8572;
@@ -1923,6 +1924,9 @@ font-family: "Gantari", sans-serif;
 @media (max-width: 768px) {
   .partners-section {
     padding: 45px 0;
+  }
+  .partners-section .partner-card1{
+    padding: 20px 0px;
   }
 
   .partners-layout {
@@ -2808,6 +2812,10 @@ font-family: "Gantari", sans-serif;
 }
 .contact-section .hero-content .btn-primary{
   font-size: 19px;
+}
+.btn-accent{
+  font-size: 18px;
+ 
 }
 
 /* Row 8-- */
