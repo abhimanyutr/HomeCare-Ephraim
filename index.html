@@ -601,20 +601,16 @@
         
         <div class="partner-card">
           <img src="./imgS/image 34.png" alt="Canadian Cancer Society logo" class="partner-logo">
-        </div>
-        
+        </div>   
       </div>
-      
     </div>
   </div>
 </section>
 
-
 <!-- Row10--- -->
 <section class="consultation-section">
   <div class="container">
-    <div class="consultation-layout">
-      
+    <div class="consultation-layout">  
       <div class="consultation-image-side">
         <div class="image-card-wrapper">
           <img src="./imgS/shutterstock_2735093511 2.png" alt="Smiling elderly woman on couch with a caring daughter" class="bg-cover-image">
@@ -624,15 +620,12 @@
           </div>
         </div>
       </div>
-      
       <div class="consultation-form-side">
         <h2>Book a Consultation</h2>
         <p class="form-description">
           We understand that choosing the right care for your loved one is an important decision. Let us guide you through our services and help you find the best options for your family.
         </p>
-        
-        <form class="booking-form" action="#" method="POST">
-          
+        <form class="booking-form" action="#" method="POST"> 
           <div class="form-group radio-group-wrapper">
             <span class="radio-label-heading">I'm interested in home care services for:</span>
             <div class="radio-options-flex">
@@ -689,8 +682,7 @@
 <!-- Row 11--- -->
 <footer class="main-footer">
   <div class="container">
-    <div class="footer-top-grid">
-      
+    <div class="footer-top-grid"> 
       <div class="footer-col brand-info-col">
         <div class="footer-logo-wrapper">
           <img src="./imgS/image 1.png" alt="Ephraim Stat Care Logo" class="footer-logo">
@@ -713,7 +705,6 @@
           <li><a href="#testimonials">Testimonial</a></li>
           <li><a href="#sitemap">Site Map</a></li>
         </ul>
-        
         <div class="social-follow-section">
           <h4 class="social-heading">Follow Us On</h4>
           <div class="social-icons-row">
@@ -728,8 +719,7 @@
             </a>
           </div>
         </div>
-      </div>
-      
+      </div>     
       <div class="footer-col links-col">
         <h3 class="footer-heading">Our Services</h3>
         <ul class="footer-links-list">
@@ -739,20 +729,16 @@
           <li><a href="#senior-escort">Senior Escort Services</a></li>
           <li><a href="#specialized-care">Specialized Care</a></li>
         </ul>
-      </div>
-      
+      </div>  
       <div class="footer-col links-col">
         <h3 class="footer-heading">Financial Aid</h3>
         <ul class="footer-links-list">
           <li><a href="#aid-overview">Overview</a></li>
           <li><a href="#client-directed-care">Client Directed Home Care</a></li>
         </ul>
-      </div>
-      
+      </div> 
       <div class="footer-col structured-contact-col">
-        
         <div class="contact-matrix">
-          
           <div class="contact-node-item">
             <div class="icon-avatar">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
@@ -762,7 +748,6 @@
               <p>Alberta T2M 1B5, Canada</p>
             </div>
           </div>
-          
          <div class="contact-node-item contact-node-item2">
   <div class="image-avatar-wrap ">
     <img class="imgs" src="./imgS/Group 901.png" alt="Phone Icon Asset">
@@ -772,7 +757,6 @@
     <a href="tel:8887281368" class="contact-phone-link">888-728-1368</a>
   </div>
 </div>
-
           <div class="contact-node-item">
             <div class="icon-avatar">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
@@ -811,32 +795,23 @@
 </div>
 
 
-    <script>
+<script>
 function openMenu(){
     document.getElementById("mobileMenu").classList.add("active");
 }
-
 function closeMenu(){
     document.getElementById("mobileMenu").classList.remove("active");
 }
 
-
-
 // Navigation Active State Handler
 document.addEventListener("DOMContentLoaded", () => {
     const menuLinks = document.querySelectorAll(".menu a");
-
     menuLinks.forEach(link => {
         link.addEventListener("click", function(e) {
-            // Remove active class from all links
             document.querySelectorAll(".menu a").forEach(item => {
                 item.classList.remove("nav-active");
-            });
-
-            // Add active class to clicked link
+            })
             this.classList.add("nav-active");
-
-            // Highlight parents if in dropdown/submenu
             let parent = this.parentElement;
             while (parent && !parent.classList.contains("menu")) {
                 if (parent.tagName === "LI") {
@@ -849,11 +824,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-
 // Accordion Section
 document.addEventListener("DOMContentLoaded", () => {
   const accordionTriggers = document.querySelectorAll(".accordion-trigger");
-
   accordionTriggers.forEach((trigger) => {
     trigger.addEventListener("click", function () {
       const currentItem = this.closest(".accordion-item");
@@ -881,8 +854,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
-
-  // 3. Initialize default expanded items correctly on initial page initialization
   const defaultOpenPanel = document.querySelector(".accordion-item.active .accordion-panel");
   if (defaultOpenPanel) {
     defaultOpenPanel.style.maxHeight = defaultOpenPanel.scrollHeight + "px";

@@ -1486,9 +1486,11 @@ font-family: "Gantari", sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(rgba(231, 111, 81, 0.633), rgba(231, 111, 81, 0.419)), 
-              url('./imgS/shutterstock_2649360331\ 1.png') no-repeat center center / cover;
-  padding: 60px 0; /* Vertical breathing room */
+  background: linear-gradient(
+              to right,
+              rgba(231, 111, 81, 0.349),
+              rgba(231, 111, 81, 0.579)),
+            url("./imgS/shutterstock_2649360331 1.png") center center / cover no-repeat;padding: 60px 0; /* Vertical breathing room */
   text-align: center;
   color: #ffffff;
 }
@@ -2707,10 +2709,6 @@ font-family: "Gantari", sans-serif;
     line-height: 1.4;
   }
 }
-
-
-
-
 
 
 @media (min-width: 1900px) {
