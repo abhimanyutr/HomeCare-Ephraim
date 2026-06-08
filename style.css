@@ -44,9 +44,9 @@ ul{
 }
 
 .navbar.scrolled {
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.31);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(1px);
 }
 
 .navWrapper{
@@ -928,10 +928,10 @@ menu li::after{
   color: #ffffff;
   text-decoration: none;
 font-family: "Gantari", sans-serif;
-  font-size: 0.9rem;
+  font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.5px;
-  padding: 12px 36px; /* Slightly more compact button padding */
+  padding: 14px 30px; /* Synchronized with .heroBtn */
   border-radius: 30px;
 
 }
@@ -1201,15 +1201,14 @@ font-family: "Gantari", sans-serif;
     justify-content:center;
     align-items:center;
 
-    width:145px;
-    height:55px;
+    padding: 14px 30px;
 
     background:#eb8572;
     color:#fff;
     text-decoration:none;
     border-radius:50px;
 
-    font-size:15px;
+    font-size:13px;
     font-weight:600;
 
     margin-top:15px;
@@ -1360,11 +1359,7 @@ font-family: "Gantari", sans-serif;
         font-size:32px;
     }
 
-    .bookBtn{
-        width:140px;
-        height:50px;
-        font-size:14px;
-    }
+    
 
 }
 
@@ -1499,8 +1494,9 @@ font-family: "Gantari", sans-serif;
 
 /* Content wrapper to limit text width for optimal readability */
 .hero-content {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
+ 
 }
 
 .hero-content h2 {
@@ -1525,10 +1521,10 @@ font-family: "Gantari", sans-serif;
   color: #ffffff;
   text-decoration: none;
  font-family: "Gantari", sans-serif;
-  font-size: 0.95rem;
+  font-size: 13px;
   font-weight: 600;
   letter-spacing: 1px;
-  padding: 16px 40px;
+  padding: 14px 30px; /* Synchronized with .heroBtn */
   border-radius: 30px; /* Fully rounded pill shape */
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
@@ -2192,9 +2188,9 @@ font-family: "Gantari", sans-serif;
   color: #ffffff;
   border: none;
   border-radius: 25px; /* Pill-shaped curved edge */
-  padding: 16px 40px;
+  padding: 14px 30px; /* Synchronized with .heroBtn */
   font-family: 'Inter', sans-serif;
-  font-size: 1.1rem;
+  font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.05em;
   cursor: pointer;
