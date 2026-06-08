@@ -44,9 +44,9 @@ ul{
 }
 
 .navbar.scrolled {
-    background: rgba(255, 255, 255, 0.31);
+    background: rgba(255, 255, 255, 0.5);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    backdrop-filter: blur(1px);
+    backdrop-filter: blur(8px);
 }
 
 .navWrapper{
@@ -358,10 +358,18 @@ menu li::after{
 
 /* ---------- Tablet ---------- */
 
-@media(max-width:991px){
+@media(max-width:768px){
 
     .navbar {
-        position: static;
+        position: sticky;
+        top: 0;
+        z-index: 9999;
+    }
+
+    .navWrapper{
+        min-height:75px;
+        padding-top: 0;
+        padding-bottom: 0;
     }
 
     .topInfo{
@@ -370,16 +378,7 @@ menu li::after{
 
     .menu{
         gap:18px;
-    }
-
-}
-
-/* ---------- Mobile ---------- */
-
-@media(max-width:768px){
-
-    .navWrapper{
-        min-height:75px;
+        display: none; /* Hide desktop menu */
     }
 
     .navRight{
@@ -426,10 +425,12 @@ menu li::after{
         flex-direction: column;
         justify-content: flex-start;
         overflow-y: auto;
+        visibility: hidden;
     }
 
     .navRight.active{
         right: 0;
+        visibility: visible;
     }
 
     /* Staggered Content Animation */
@@ -1178,7 +1179,6 @@ font-family: "Gantari", sans-serif;
     flex: 6;   /* 60% */
 }
 
-
 .seniorContent h2{
     font-family: "Spectral", serif;
     font-size:50px;
@@ -1321,7 +1321,7 @@ font-family: "Gantari", sans-serif;
     }
 
     .seniorContent p{
-        font-size:14px;
+        font-size:16px;
     }
 
 }
@@ -1469,7 +1469,7 @@ font-family: "Gantari", sans-serif;
     }
 
     .whyBox p{
-        font-size: 14px;
+        font-size: 16px;
         line-height: 1.8;
         margin-bottom: 18px;
     }
@@ -2443,11 +2443,14 @@ font-family: "Gantari", sans-serif;
   margin-bottom: 24px;
   border-bottom: 1px solid #eef2f4;
   padding-bottom: 24px;
+  align-items: center;
+  justify-items: start;
 }
 
 .contact-node-item {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 12px;
 }
 
@@ -2509,6 +2512,7 @@ font-family: "Gantari", sans-serif;
   font-size: 0.78rem;
   line-height: 1.3;
   color: #111111;
+  text-align: center;
 }
 
 .node-text p { margin: 0; }
@@ -2660,6 +2664,9 @@ font-family: "Gantari", sans-serif;
   .newsletter-message h4 {
     font-size: 1.25rem;
   }
+  .contact-node-item2, .contact-node-item4{
+    margin-left: 15px;
+  }
 }
 
 /* copyright---- */
@@ -2770,6 +2777,7 @@ font-family: "Gantari", sans-serif;
      padding: 40px 145px 40px 80px;
 }
 
+
 /* row3 */
 .layout-left-40 h2{
         font-size:50px;
@@ -2797,6 +2805,9 @@ font-family: "Gantari", sans-serif;
 }
 .contact-section .hero-content p{
      font-size:20px;
+}
+.contact-section .hero-content .btn-primary{
+  font-size: 19px;
 }
 
 /* Row 8-- */
