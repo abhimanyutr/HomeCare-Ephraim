@@ -1490,7 +1490,7 @@ font-family: "Gantari", sans-serif;
               to right,
               rgba(231, 111, 81, 0.349),
               rgba(231, 111, 81, 0.579)),
-            url("./imgS/shutterstock_2649360331 1.png") center center / cover no-repeat;padding: 60px 0; /* Vertical breathing room */
+            url("./imgS/shutterstock_2649360331 1.png") center center / cover no-repeat;padding: 60px 0;
   text-align: center;
   color: #ffffff;
 }
@@ -1541,7 +1541,6 @@ font-family: "Gantari", sans-serif;
   transform: translateY(0);
 }
 
-/* --- Responsive Media Queries --- */
 @media (max-width: 768px) {
   .contact-section {
     min-height: auto;
